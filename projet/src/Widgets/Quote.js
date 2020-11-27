@@ -1,8 +1,8 @@
 import React, { Component,useState,useEffect } from 'react';
 import {Card,Button} from 'react-bootstrap';
+import './Quote';
 
-
-function Quote(){
+function Quote() {
     const citations = [
 
 {
@@ -61,22 +61,73 @@ id :1
 
 const [quoteD,getquoteD]= useState(citations);
 const[current,setCurrent]= useState(0);
-const[quote,getquoteD]=useState(quote[current])
+const[quote,getQuote]=useState(quoteD[current]);
 
-    return (
-    
-    <div className="quote">
-        {this.state.citations.map(({citations,id,author,quote})=>
-        <div key={id}>
-        <p> {this.state.citations.quote} 
-        {this.state.citations.author}</p>
-        
-        </div>
-        )
-    }
+useEffect(
+    () => getQuote(quoteD[current]), 
+    [current, quote]
+)
+  
+  const nextQuote = () => {
+    current === quoteD.length-1 ?
+      setCurrent(0)
+    :
+      setCurrent(current + 1)
+  }
+  
+  const prevQuote = () => {
+    current === 0 ?
+      setCurrent(quoteD.length-1)
+    :
+      setCurrent(current - 1)
+  }
+  
+  const dotPicksQuote = (e) => setCurrent(Number(e.target.id))
+  
+  console.log(current)
+  return (
+    <section>
+      <div className="slideshow-container">
+        <Slide quote={quote} />
+        <Arrows nextQuote={nextQuote}
+                prevQuote={prevQuote} />
+      </div>
+      <Dots dotQty={quoteD} 
+            current={current}
+            dotPicksQuote={dotPicksQuote} />
+    </section>  
+  )
+}
+
+function Slide({quote}) {
+  return (
+    <div className="mySlides">
+      <q>{quote.quote}</q>
+      <p className="author"> <br /> &mdash;{quote.author}</p>
     </div>
+  )
+}
 
-    );
+function Arrows({nextQuote, prevQuote}) {
+  return (
+    <>    
+      <a onClick={prevQuote} className="prev" id="prev">&#10094;</a>
+      <a onClick={nextQuote} className="next" id="next">&#10095;</a>
+    </>
+  )
+}
+
+function Dots({dotQty, current, dotPicksQuote}) {
+  return (
+    <div className="dot-container">
+      {
+        dotQty.map((dot, i) => {
+          return <span id={i} className={current === i ? "dot active" : "dot"}
+                        onClick={dotPicksQuote}></span>
+        })
+      }
+    </div>
+  )
 }
 
 export default Quote;
