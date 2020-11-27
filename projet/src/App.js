@@ -66,13 +66,20 @@ function App() {
         <Col md={6}>
         <div className="card-deck">
  
- 
-   <Card style={{ width: '10px'} }>
-   <Card.Body>
-        <h4 className="music">Music</h4>
-        <p className="category">Music</p>
+        <Card className="flip-card"style={{ width: '10px'} }>
+      <Card.Body >
+<div>
+    <div class="flip-card-inner">   
+    <h4 className="music">Music</h4>
+      <p className="category">Music</p>
+     </div>
+     <div class="flip-card-back">
+     
+     </div>
+     </div>
         </Card.Body>
         </Card>
+   
         </div>
         </Col>
        
@@ -80,17 +87,10 @@ function App() {
 
         <Col md={6}>
     <div className="card-deck">
-    <Card className="flip-card"style={{ width: '10px'} }>
-      <Card.Body >
-<div>
-    <div class="flip-card-inner">   
-    <h4 className="astuce">Astuces</h4>
-      <p className="category">Astuces</p>
-     </div>
-     <div class="flip-card-back">
-        Astuce du jour
-     </div>
-     </div>
+    <Card style={{ width: '10px'} }>
+   <Card.Body>
+        <h4 className="astuce">Astuces</h4>
+        <p className="category">Astuces</p>
         </Card.Body>
         </Card>
         </div>

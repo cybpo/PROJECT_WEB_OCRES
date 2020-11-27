@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component,useState,useEffect } from 'react';
 import {Card,Button} from 'react-bootstrap';
 
 
-
-class Quote extends React.Component
-{
-    constructor(props){
-    super(props);
-    
+function Quote(){
     const citations = [
 
 {
@@ -64,12 +59,10 @@ id :1
     
 ];
 
-this.state = { citations };
+const [quoteD,getquoteD]= useState(citations);
+const[current,setCurrent]= useState(0);
+const[quote,getquoteD]=useState(quote[current])
 
-}
-
-
-render() {
     return (
     
     <div className="quote">
@@ -84,7 +77,6 @@ render() {
     </div>
 
     );
-}
 }
 
 export default Quote;

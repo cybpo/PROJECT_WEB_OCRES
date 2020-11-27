@@ -73,6 +73,7 @@
   }
 }
 
+/*MUSIC FLIPPING CARDS */
 
 .flip-card {
   
@@ -83,7 +84,19 @@
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
-  background-color: rgb(182, 128, 226);
+  background-color: rgb(46, 29, 59);
+  color: azure;
+  position: relative;
+  width: 100%;
+  height: 10rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 2em;
+  
+}
+.flip-card-back {
+  background-color: rgb(46, 29, 59);
   position: relative;
   width: 100%;
   height: 10rem;
