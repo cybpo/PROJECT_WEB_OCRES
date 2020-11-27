@@ -1,3 +1,4 @@
+
 import React, { Component,useState,useEffect } from 'react';
 import {Card,Button} from 'react-bootstrap';
 import './Quote';
@@ -131,3 +132,6 @@ function Dots({dotQty, current, dotPicksQuote}) {
 }
 
 export default Quote;
+
+
+
