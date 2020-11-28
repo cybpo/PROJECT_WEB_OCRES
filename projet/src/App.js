@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import 'C:/Users/cybop/tutoo/src/App.css';
+import './App.css';
 import Accueuil from './Components/Accueuil';
 import Admin from './Components/Admin';
 import Menu from './Components/Menu';
