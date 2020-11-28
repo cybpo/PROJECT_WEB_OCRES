@@ -107,6 +107,7 @@ function Slide({quote}) {
   )
 }
 
+
 function Arrows({nextQuote, prevQuote}) {
   return (
     <>    
@@ -115,6 +116,7 @@ function Arrows({nextQuote, prevQuote}) {
     </>
   )
 }
+
 
 function Dots({dotQty, current, dotPicksQuote}) {
   return (
