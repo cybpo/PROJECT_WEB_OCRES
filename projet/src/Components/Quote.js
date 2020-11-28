@@ -131,6 +131,8 @@ function Dots({dotQty, current, dotPicksQuote}) {
   )
 }
 
+
+
 export default Quote;
 
 
