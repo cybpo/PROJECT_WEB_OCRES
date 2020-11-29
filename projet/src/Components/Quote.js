@@ -1,9 +1,22 @@
 
+
 import React, { Component,useState,useEffect } from 'react';
 import {Card,Button} from 'react-bootstrap';
 import './Quote';
 
 function Quote() {
+
+import React, { Component } from 'react';
+import {Card,Button} from 'react-bootstrap';
+
+
+
+class Quote extends React.Component
+{
+    constructor(props){
+    super(props);
+    
+
     const citations = [
 
 {
@@ -11,6 +24,7 @@ id :0
 ,quote : 'You’ve gotta dance like there’s nobody watching, love like you’ll never be hurt, sing like there’s nobody listening, and live like it’s heaven on earth.' 
 ,author : 'William W. Purkey'
 },
+
 
 {
 id :1
@@ -58,6 +72,7 @@ id :1
     ,author :'Abraham Lincoln'},  
     
 ];
+
 
 const [quoteD,getquoteD]= useState(citations);
 const[current,setCurrent]= useState(0);
@@ -133,4 +148,30 @@ function Dots({dotQty, current, dotPicksQuote}) {
 export default Quote;
 
 
+
+
+this.state = { citations };
+
+}
+
+
+render() {
+    return (
+    
+    <div className="quote">
+        {this.state.citations.map(({citations,id,author,quote})=>
+        <div key={id}>
+        <p> {this.state.citations.quote} 
+        {this.state.citations.author}</p>
+        
+        </div>
+        )
+    }
+    </div>
+
+    );
+}
+}
+
+export default Quote;
 
